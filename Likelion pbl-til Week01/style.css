@@ -1,0 +1,35 @@
+body {
+    background-color: lightblue;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.point-text {
+    font-weight: bold;
+    color: gray;
+}
+
+.highlighter {
+    background-color: rgba(255, 255, 0, 0.7);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
