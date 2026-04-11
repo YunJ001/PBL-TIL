@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.summary-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .summary-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.summary-info {
+    padding: 20px;
+}
+
+.summary-info .part {
+    color: royalblue;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.summary-info .intro {
+    color: gray;
+}
+
+.my-card {
+    border: 2px solid royalblue;
+}
+
+.my-card .summary-info .part {
+    color: limegreen;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: lightgray;
+    margin-bottom: 60px;
+}
+
+/* 상세 정보 목록 (Flexbox) */
+.detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.track-info {
+    color: black;
+    margin-bottom: 25px;
+}
+
+.track-info span {
+    color: royalblue;
+    font-weight: bold;
+}
+
+.detail-content {
+    margin-bottom: 20px;
+}
+
+.detail-content h4 {
+    margin-bottom: 8px;
+}
+
+.detail-content p, .detail-content li {
+    color: black;
+}
+
+.detail-content ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.motto {
+    margin-top: 10px;
+}
+
+a {
+    color: royalblue;
+    text-decoration: none;
+}
