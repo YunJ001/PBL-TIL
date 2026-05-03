@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아기사자 대시보드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+
+        <div class="section-header">
+            <button id="btn-add" class="btn btn-primary">아기 사자 추가</button>
+            <button id="btn-delete" class="btn btn-secondary">마지막 아기 사자 삭제</button>
+            <span id="total-count" class="total-count">총 9명</span>
+        </div>
+
+        <div id="add-form-container" class="add-form-container hidden">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="input-name">이름</label>
+                    <input type="text" id="input-name" placeholder="예: 홍아기사자" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-part">파트</label>
+                    <select id="input-part">
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Design">Design</option>
+                    </select>
+                </div>
+                <div class="form-group form-full">
+                    <label for="input-skills">관심 기술 (쉼표로 구분)</label>
+                    <input type="text" id="input-skills" placeholder="예: JavaScript, React, HTML/CSS" required>
+                </div>
+                <div class="form-group form-full">
+                    <label for="input-intro">한 줄 소개 (요약 카드)</label>
+                    <input type="text" id="input-intro" placeholder="예: 3주차 DOM 조작 연습 중!" required>
+                </div>
+                <div class="form-group form-full">
+                    <label for="input-bio">자기소개 (상세 카드)</label>
+                    <textarea id="input-bio" rows="4" placeholder="예: HTML/CSS로 구조를 만들고, JS로 데이터를 바꾸면 화면이 바뀌는 경험을 하고 있습니다." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="input-email">Email</label>
+                    <input type="email" id="input-email" placeholder="예: lion@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-phone">Phone</label>
+                    <input type="text" id="input-phone" placeholder="예: 010-1234-5678" required>
+                </div>
+                <div class="form-group form-full">
+                    <label for="input-website">Website</label>
+                    <input type="url" id="input-website" placeholder="예: https://example.com" required>
+                </div>
+                <div class="form-group form-full">
+                    <label for="input-motto">한 마디</label>
+                    <input type="text" id="input-motto" placeholder="예: 데이터 바꾸면 화면도 바뀐다!" required>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button id="btn-submit" class="btn btn-primary">추가하기</button>
+                <button id="btn-cancel" class="btn btn-secondary">취소</button>
+            </div>
+        </div>
+
+        <section id="summary-grid" class="summary-grid">
+            <article class="summary-card my-card"
+                data-name="김아기사자"
+                data-part="Frontend"
+                data-skills="HTML / CSS,JavaScript,React (학습 중)"
+                data-intro="구조적인 UI를 고민하는 프론트엔드 개발자입니다."
+                data-bio="HTML과 CSS를 학습하며 사용자 경험을 향상시키는 구조적인 UI 설계에 매력을 느끼고 있습니다."
+                data-email="lionkim@example.com"
+                data-phone="010-1234-5678"
+                data-website="https://example.com"
+                data-motto="기본기를 탄탄히 다지는 개발자가 되고 싶습니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">HTML / CSS</span>
+                </div>
+                <div class="summary-info">
+                    <h3>김아기사자</h3>
+                    <p class="part">Frontend</p>
+                    <p class="intro">구조적인 UI를 고민하는 프론트엔드 개발자입니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="박아기사자"
+                data-part="Backend"
+                data-skills="Java,Spring,Database"
+                data-intro="안정적인 서버 구조에 관심이 많습니다."
+                data-bio="효율적인 비즈니스 로직 처리와 확장 가능한 서버 아키텍처를 구축하는 것에 집중하고 있습니다."
+                data-email="lionpark@example.com"
+                data-phone="010-2345-6789"
+                data-website="https://example.com"
+                data-motto="안정적인 서비스를 만드는 개발자가 되고 싶습니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">Java</span>
+                </div>
+                <div class="summary-info">
+                    <h3>박아기사자</h3>
+                    <p class="part">Backend</p>
+                    <p class="intro">안정적인 서버 구조에 관심이 많습니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="이아기사자"
+                data-part="Design"
+                data-skills="Figma,Adobe XD,UI/UX"
+                data-intro="사용자 관점에서 디자인을 고민합니다."
+                data-bio="사용자가 편리함을 느끼는 인터페이스를 위해 심미성과 기능성의 조화를 연구합니다."
+                data-email="lee@example.com"
+                data-phone="010-3456-7890"
+                data-website="https://example.com"
+                data-motto="사용자 관점에서 디자인을 고민합니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">Figma</span>
+                </div>
+                <div class="summary-info">
+                    <h3>이아기사자</h3>
+                    <p class="part">Design</p>
+                    <p class="intro">사용자 관점에서 디자인을 고민합니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="최아기사자"
+                data-part="Frontend"
+                data-skills="TypeScript,React,Next.js"
+                data-intro="컴포넌트 단위 설계에 흥미가 있습니다."
+                data-bio="컴포넌트의 재사용성을 높여 효율적인 프론트엔드 개발 환경을 구축하는 것을 좋아합니다."
+                data-email="choi@example.com"
+                data-phone="010-4567-8901"
+                data-website="https://example.com"
+                data-motto="컴포넌트 단위 설계에 흥미가 있습니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">TypeScript</span>
+                </div>
+                <div class="summary-info">
+                    <h3>최아기사자</h3>
+                    <p class="part">Frontend</p>
+                    <p class="intro">컴포넌트 단위 설계에 흥미가 있습니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="정아기사자"
+                data-part="Backend"
+                data-skills="Node.js,Express,MongoDB"
+                data-intro="데이터 흐름을 명확히 하는 개발을 지향합니다."
+                data-bio="데이터의 흐름을 논리적으로 설계하고 서버 성능을 최적화하는 과정에서 보람을 느낍니다."
+                data-email="jung@example.com"
+                data-phone="010-5678-9012"
+                data-website="https://example.com"
+                data-motto="데이터 흐름을 명확히 하는 개발을 지향합니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">Node.js</span>
+                </div>
+                <div class="summary-info">
+                    <h3>정아기사자</h3>
+                    <p class="part">Backend</p>
+                    <p class="intro">데이터 흐름을 명확히 하는 개발을 지향합니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="오아기사자"
+                data-part="Design"
+                data-skills="Design System,Sketch,Prototyping"
+                data-intro="디자인 시스템에 관심이 많습니다."
+                data-bio="브랜드의 정체성을 담은 디자인 시스템을 구축하여 협업의 효율을 높이는 데 관심이 많습니다."
+                data-email="oh@example.com"
+                data-phone="010-6789-0123"
+                data-website="https://example.com"
+                data-motto="디자인 시스템에 관심이 많습니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">Design System</span>
+                </div>
+                <div class="summary-info">
+                    <h3>오아기사자</h3>
+                    <p class="part">Design</p>
+                    <p class="intro">디자인 시스템에 관심이 많습니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="유아기사자"
+                data-part="Frontend"
+                data-skills="CSS Grid,Flexbox,Sass"
+                data-intro="레이아웃의 정석을 공부하고 있습니다."
+                data-bio="웹 표준을 준수하며 다양한 환경에서도 일관된 레이아웃을 제공하는 웹 페이지를 만듭니다."
+                data-email="yoo@example.com"
+                data-phone="010-7890-1234"
+                data-website="https://example.com"
+                data-motto="레이아웃의 정석을 공부하고 있습니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">CSS Grid</span>
+                </div>
+                <div class="summary-info">
+                    <h3>유아기사자</h3>
+                    <p class="part">Frontend</p>
+                    <p class="intro">레이아웃의 정석을 공부하고 있습니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="서아기사자"
+                data-part="Backend"
+                data-skills="GraphQL,Apollo,PostgreSQL"
+                data-intro="효율적인 API 설계에 집중합니다."
+                data-bio="데이터 통신 효율을 극대화하고 클라이언트의 요구에 유연하게 대응하는 API를 설계합니다."
+                data-email="seo@example.com"
+                data-phone="010-8901-2345"
+                data-website="https://example.com"
+                data-motto="효율적인 API 설계에 집중합니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">GraphQL</span>
+                </div>
+                <div class="summary-info">
+                    <h3>서아기사자</h3>
+                    <p class="part">Backend</p>
+                    <p class="intro">효율적인 API 설계에 집중합니다.</p>
+                </div>
+            </article>
+
+            <article class="summary-card"
+                data-name="한아기사자"
+                data-part="Design"
+                data-skills="Typography,InDesign,Illustrator"
+                data-intro="타이포그래피의 힘을 믿습니다."
+                data-bio="글자와 공간의 미학을 활용하여 메시지를 가장 명확하게 전달하는 디자인을 추구합니다."
+                data-email="han@example.com"
+                data-phone="010-9012-3456"
+                data-website="https://example.com"
+                data-motto="타이포그래피의 힘을 믿습니다."
+                data-image="https://i.imgur.com/GO50UpY.png">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/GO50UpY.png" alt="프로필">
+                    <span class="badge">Typography</span>
+                </div>
+                <div class="summary-info">
+                    <h3>한아기사자</h3>
+                    <p class="part">Design</p>
+                    <p class="intro">타이포그래피의 힘을 믿습니다.</p>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <section id="detail-list" class="detail-list"></section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
