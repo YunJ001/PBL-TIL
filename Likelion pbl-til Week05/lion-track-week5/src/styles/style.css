@@ -1,0 +1,323 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.total-count {
+    font-weight: bold;
+    color: dimgray;
+}
+
+.fetch-status {
+    color: dimgray;
+}
+
+.fetch-status.loading {
+    color: darkgray;
+}
+
+.fetch-status.success {
+    color: green;
+}
+
+.fetch-status.error {
+    color: crimson;
+}
+
+.view-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.view-option-label {
+    font-size: 14px;
+    color: dimgray;
+}
+
+.view-select {
+    padding: 8px 14px;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.view-search {
+    padding: 8px 14px;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    width: 180px;
+}
+
+.view-select:focus,
+.view-search:focus {
+    outline: 2px solid royalblue;
+    border-color: royalblue;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    border-color: royalblue;
+    color: black;
+}
+
+.btn-primary.active {
+    background-color: royalblue;
+    color: white;
+}
+
+.btn-secondary {
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.add-form-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 14px;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid royalblue;
+    border-color: royalblue;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.summary-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .summary-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.summary-info {
+    padding: 20px;
+}
+
+.summary-info h3 {
+    margin-bottom: 6px;
+}
+
+.summary-info .part {
+    color: royalblue;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.summary-info .intro {
+    color: gray;
+    font-size: 14px;
+}
+
+.my-card {
+    border: 2px solid royalblue;
+}
+
+.my-card .summary-info .part {
+    color: limegreen;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: darkgray;
+    font-size: 15px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: lightgray;
+    margin-bottom: 60px;
+}
+
+.detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.track-info {
+    color: black;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.track-info span {
+    color: royalblue;
+    font-weight: bold;
+}
+
+.detail-content {
+    margin-bottom: 20px;
+}
+
+.detail-content h4 {
+    margin-bottom: 8px;
+}
+
+.detail-content p,
+.detail-content li {
+    color: black;
+}
+
+.detail-content ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.motto {
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+a {
+    color: royalblue;
+    text-decoration: none;
+}
